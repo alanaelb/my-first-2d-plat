@@ -26,13 +26,13 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Rigidbody2D playerRB = GetComponent<Rigidbody2D>();
-            playerRB.AddForce(Vector2.left * 200f * Time.deltaTime);
+            playerRB.AddForce(Vector2.left * 200f);
         }
        
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Rigidbody2D playerRB = GetComponent<Rigidbody2D>();
-            playerRB.AddForce(Vector2.right * 200f * Time.deltaTime);
+            playerRB.AddForce(Vector2.right * 200f);
         }
     }
 
