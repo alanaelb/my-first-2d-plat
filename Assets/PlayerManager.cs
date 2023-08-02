@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Health _health;
     void Start()
     {
-        
+        _health = GetComponent<Health>();   
     }
 
-    // Update is called once per frame
-    void Update()
+   private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        _health.Damage(20);
     }
 }
