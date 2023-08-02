@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-//camelCasing - always starts with lower case 
-//PascalCasing - always starts with upper case
+//camelCasing - always starts with lower case - private variables
+//PascalCasing - always starts with upper case - Class Name, Function Names
 
 public class Health : MonoBehaviour
 {
-    public TMP_Text healthText; 
+    public TMP_Text HealthText; 
     
     private int _health = 100;
     private int _maxHealth = 100;
 
+    private void Start()
+    {
+        DisplayHealth();
+    }
+
     public void DisplayHealth()
     {
-        if (healthText != null)
+        if (HealthText != null)
         {
-            healthText.text = "Health: " + _health;
+            HealthText.text = "Health: " + _health;
         }
        
     }
@@ -31,12 +36,15 @@ public class Health : MonoBehaviour
             //_health = 0;
             Destroy(gameObject);
         }
+        DisplayHealth();
     }
+    
 
 
     public void Heal(int heal)
     {
         _health = Mathf.Min(_maxHealth, _health + heal);
+        DisplayHealth();
     }
 
 }
