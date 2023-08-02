@@ -5,18 +5,40 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody2D _rigidbody;
+    private bool _isJumpInput = false; 
+    private bool _isGrounded = false;   
     void Start()
     {
-
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+       if (Input.GetKeyUp(KeyCode.Space))
+        {
+            _isJumpInput=true;
+        }
+    }
+    void FixedUpdate()
+    {
 
+        if (_isJumpInput && _isGrounded)
+        {
+            _rigidbody.AddForce(Vector2.up * 200f);
+        }
+        _isJumpInput = false; 
 
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            _rigidbody.AddForce(Vector2.right * 600f * Time.deltaTime);
+        }
 
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            _rigidbody.AddForce(Vector2.left * 600f * Time.deltaTime);
+        }
+       
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Rigidbody2D playerRB = GetComponent<Rigidbody2D>();
@@ -36,5 +58,15 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        _isGrounded = true; 
+    }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _isGrounded = false; 
+    }
 }
 
