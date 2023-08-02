@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
         {
             isMovingRight = false;
         }
-        if (transform.position.y <= -10)
+        if (transform.position.x <= -10)
         {
 
             isMovingRight = true;
