@@ -1292,6 +1292,7 @@ GameObject:
   - component: {fileID: 1765913337}
   - component: {fileID: 1765913339}
   - component: {fileID: 1765913338}
+  - component: {fileID: 1765913340}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1440,3 +1441,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthText: {fileID: 599443413}
+--- !u!114 &1765913340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765913332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0638451667c724b89707e8708b7be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletPreFab: {fileID: 5266520603078100101, guid: 437a64a25da53d04da7a73fe0db26c72, type: 3}

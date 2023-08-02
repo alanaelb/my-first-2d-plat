@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
        if (Input.GetMouseButtonDown(0))
         {
 
-            Instantiate(BulletPreFab);
+            Instantiate(BulletPreFab , transform.position, Quaternion.identity); 
         }
     }
 }

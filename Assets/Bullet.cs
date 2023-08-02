@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public float Speed = 10f;
+    
     void Update()
     {
-        
+        transform.position += transform.right * Speed * Time.deltaTime;
     }
 }
